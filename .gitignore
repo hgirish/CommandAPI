@@ -43,3 +43,10 @@ msbuild.ProjectImports.zip
 StyleCop.Cache
 UpgradeLog.htm
 .idea
+
+# my settings
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
