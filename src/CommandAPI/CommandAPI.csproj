@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>892758a7-02ee-47a9-81e3-eaf6d7d6d4ef</UserSecretsId>
     <RootNameSpace>CommandAPI</RootNameSpace>
   </PropertyGroup>
 
