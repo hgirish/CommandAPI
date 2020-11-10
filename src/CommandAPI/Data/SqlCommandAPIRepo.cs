@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using CommandAPI.Models;
@@ -14,7 +15,11 @@ namespace CommandAPI.Data
     }
     public void CreateCommand(Command command)
     {
-      throw new System.NotImplementedException();
+      if (command == null)
+      {
+        throw new ArgumentNullException(nameof(command));
+      }
+      _context.CommandItems.Add(command);
     }
 
     public void DeleteCommand(Command command)
@@ -34,12 +39,12 @@ namespace CommandAPI.Data
 
     public bool SaveChanges()
     {
-      throw new System.NotImplementedException();
+      return (_context.SaveChanges() >= 0);
     }
 
     public void UpdateCommand(Command command)
     {
-      throw new System.NotImplementedException();
+      // We don't need to do anything here.
     }
   }
 }
