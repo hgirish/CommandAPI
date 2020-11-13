@@ -12,14 +12,13 @@ namespace CommandAPI.Controllers
   [ApiController]
   public class CommandsController : ControllerBase
   {
-    // Testing CI/CD trigger
     private readonly ICommandAPIRepo _repository;
     private readonly IMapper _mapper;
 
     public CommandsController(ICommandAPIRepo repository, IMapper mapper)
     {
-      this._repository = repository;
-      this._mapper = mapper;
+      _repository = repository;
+      _mapper = mapper;
     }
     [HttpGet]
     public ActionResult<IEnumerable<CommandReadDto>> GetAllCommands()

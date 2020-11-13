@@ -10,7 +10,7 @@ namespace CommandAPI.Data
     private readonly CommandContext _context;
     public SqlCommandAPIRepo(CommandContext context)
     {
-      this._context = context;
+      _context = context;
 
     }
     public void CreateCommand(Command command)
