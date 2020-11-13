@@ -1,23 +1,28 @@
 trigger:
-- master
+  - master
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: "ubuntu-latest"
 variables:
-  buildConfiguration: 'Release'
+  buildConfiguration: "Release"
 steps:
   - task: UseDotNet@2
-    displayName: 'Use .NET Core sdk'
+    displayName: "Use .NET Core sdk"
     inputs:
       packageType: sdk
       version: 5.x
       installationPath: $(Agent.ToolsDirectory)/dotnet
   - task: DotNetCoreCLI@2
-    displayName: 'dotnet restore'
+    displayName: "dotnet restore"
     inputs:
-      command: 'restore'
-      projects: '**/*.csproj'
-      
-      
-      
+      command: "restore"
+      projects: "**/*.csproj"
+
   - script: dotnet build --configuration $(buildConfiguration)
-    displayName: 'dotnet build $(buildConfiguration'
+    displayName: "dotnet build $(buildConfiguration"
+
+  - task: DotNetCoreCLI@2
+    displayName: "dotnet test"
+    inputs:
+      command: test
+      projects: "**/Tests/*.csproj"
+      testRunTitle: "XUnit Test Run"
