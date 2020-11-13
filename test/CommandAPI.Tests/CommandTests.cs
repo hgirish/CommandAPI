@@ -19,9 +19,6 @@ namespace CommandAPI.Tests
     [Fact]
     public void CanChangeHowTo()
     {
-      //Given
-
-      //When
       testCommand.HowTo = "Execute Unit Tests";
       //Then
       Assert.Equal("Execute Unit Tests", testCommand.HowTo);
