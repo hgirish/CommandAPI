@@ -101,7 +101,7 @@ namespace CommandAPI.Tests
       var result = controller.GetCommandById(1);
 
       // Assert
-      Assert.IsType<OkResult>(result.Result);
+      Assert.IsType<NotFoundResult>(result.Result);
     }
 
 
